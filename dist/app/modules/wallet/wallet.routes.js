@@ -1,0 +1,18 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.WalletRoutes = void 0;
+const express_1 = require("express");
+const wallet_controller_1 = require("./wallet.controller");
+const checkAuth_1 = require("../../middleware/checkAuth");
+const user_interface_1 = require("../user/user.interface");
+const validateRequest_1 = require("../../middleware/validateRequest");
+const wallet_validation_1 = require("./wallet.validation");
+const router = (0, express_1.Router)();
+router.get("/", (0, checkAuth_1.checkAuth)(...Object.values(user_interface_1.Role)), wallet_controller_1.walletControllers.getMyWallet);
+router.get("/all-wallets", (0, checkAuth_1.checkAuth)(user_interface_1.Role.ADMIN), wallet_controller_1.walletControllers.getAllWallet);
+router.post("/deposit", (0, checkAuth_1.checkAuth)(...Object.values(user_interface_1.Role)), (0, validateRequest_1.validateRequest)(wallet_validation_1.depositZodSchema), wallet_controller_1.walletControllers.deposit);
+router.post("/withdraw", (0, checkAuth_1.checkAuth)(...Object.values(user_interface_1.Role)), (0, validateRequest_1.validateRequest)(wallet_validation_1.withdrawZodSchema), wallet_controller_1.walletControllers.withdraw);
+router.post("/transfer", (0, checkAuth_1.checkAuth)(...Object.values(user_interface_1.Role)), (0, validateRequest_1.validateRequest)(wallet_validation_1.transferZodSchema), wallet_controller_1.walletControllers.transfer);
+router.post("/agent/cashIn", (0, checkAuth_1.checkAuth)(user_interface_1.Role.AGENT), (0, validateRequest_1.validateRequest)(wallet_validation_1.agentCashZodSchema), wallet_controller_1.walletControllers.agentCashIn);
+router.post("/agent/cashOut", (0, checkAuth_1.checkAuth)(user_interface_1.Role.AGENT), (0, validateRequest_1.validateRequest)(wallet_validation_1.agentCashZodSchema), wallet_controller_1.walletControllers.agentCashOut);
+exports.WalletRoutes = router;

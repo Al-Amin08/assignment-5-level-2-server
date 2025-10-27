@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TransactionRoutes = void 0;
+const express_1 = require("express");
+const checkAuth_1 = require("../../middleware/checkAuth");
+const user_interface_1 = require("../user/user.interface");
+const transaction_controller_1 = require("./transaction.controller");
+const router = (0, express_1.Router)();
+router.get("/my-transactions", (0, checkAuth_1.checkAuth)(...Object.values(user_interface_1.Role)), transaction_controller_1.transactionController.getMyTransactionHistory);
+router.get("/commission-histories", (0, checkAuth_1.checkAuth)(user_interface_1.Role.AGENT, user_interface_1.Role.ADMIN), transaction_controller_1.transactionController.getCommissionHistory);
+router.get("/all-transactions", (0, checkAuth_1.checkAuth)(user_interface_1.Role.ADMIN), transaction_controller_1.transactionController.getAllTransaction);
+exports.TransactionRoutes = router;
