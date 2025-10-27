@@ -45,7 +45,11 @@ All financial operations are **atomic and fully tracked**.
 | `add_money` | Top-up user’s own wallet | User |
 | `withdraw` | Withdraw funds | User |
 | `send_money` | Transfer money between users | User |
+<<<<<<< HEAD
 | `commission` | Agent earns commission | System/Admin |
+=======
+| `commission` | Agent earns commission | System |
+>>>>>>> 70b4278f5c9a94d9ba5cd97672543a57fe66814a
 
 #### Key Features:
 - **Transaction Fee System:** configurable by admin.
@@ -83,7 +87,11 @@ Users can:
 - View wallet balance.
 - **Add Money**, **Withdraw**, and **Send Money** to other users.
 - View full **transaction history**.
+<<<<<<< HEAD
 - Must maintain the minimum balance which is set by admin.
+=======
+- Must maintain the minimum balance set by admin.
+>>>>>>> 70b4278f5c9a94d9ba5cd97672543a57fe66814a
 
 ---
 
