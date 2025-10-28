@@ -1,4 +1,4 @@
-# 💰 Digital Wallet API (Bkash/Nagad Clone)
+# 💰 Digital Wallet API 
 
 A secure and modular **Digital Wallet Backend API** built with **Node.js**, **Express.js**, and **MongoDB (Mongoose)**.  
 It implements core financial operations (add money, withdraw, send money) with **role-based access**, **JWT authentication**, and **transaction tracking**.
