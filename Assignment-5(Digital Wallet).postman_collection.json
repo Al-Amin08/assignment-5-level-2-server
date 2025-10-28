@@ -1,0 +1,622 @@
+{
+	"info": {
+		"_postman_id": "5433239a-343b-40b2-9dbd-cc7baa6a2b31",
+		"name": "Assignment-5(Digital Wallet)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45884492",
+		"_collection_link": "https://gg-2579723.postman.co/workspace/95035cd5-060f-401f-820d-0904b432de68/collection/45884492-5433239a-343b-40b2-9dbd-cc7baa6a2b31?action=share&source=collection_link&creator=45884492"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGVkMTJmZTcxNzM1M2Q5NDUzNmYxYzkiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzYwNTQyODQ2LCJleHAiOjE3NjIyNzA4NDZ9.geRchXdli6KDFQv3wt_hIIadUWB2OaNGOwKqRmRmIR",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n   \r\n    \"email\":\"super@gmail.com\",\r\n    \"password\":\"1234Super@\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://assignment-5-nine-mu.vercel.app/api/auth/login",
+							"protocol": "https",
+							"host": [
+								"assignment-5-nine-mu",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"name\":\"super admin\",\r\n    \"email\":\"super@gmail.com\",\r\n    \"password\":\"1234Super@\",\r\n    \"role\": \"SUPER_ADMIN\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All User List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Block user",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGVkMWNkZTQ1ZjQ1NmJkMGY4MjQxZTkiLCJlbWFpbCI6InN1cGVyMUBnbWFpbC5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NjA1OTgzNjUsImV4cCI6MTc2MjMyNjM2NX0.sBaujW42WnAzdAW4RiHj3XO-rL_ZuDkeEjaYDQmaJl0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"super admin\",\r\n    \"email\": \"super@gmail.com\",\r\n    \"password\": \"1234Super@\",\r\n    \"role\": \"SUPER_ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://assignment-5-nine-mu.vercel.app/api/user/blockUser/68ee70e4efdd1d94112331ee",
+							"protocol": "https",
+							"host": [
+								"assignment-5-nine-mu",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"user",
+								"blockUser",
+								"68ee70e4efdd1d94112331ee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unblock user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"name\":\"super admin\",\r\n    \"email\":\"super@gmail.com\",\r\n    \"password\":\"1234Super@\",\r\n    \"role\": \"SUPER_ADMIN\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/user/blockUser/68ed12fe717353d94536f1c9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"blockUser",
+								"68ed12fe717353d94536f1c9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Approve Agent",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGVkMTJmZTcxNzM1M2Q5NDUzNmYxYzkiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc2MTMxNDUwNywiZXhwIjoxNzYzMDQyNTA3fQ.YK2-mnwRolsxu-hzqHg_ebWGrSUbsjeOWSQlV4_BnC4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/user/approveAgent/68ef4d09d8af19e2f9fa2614",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"approveAgent",
+								"68ef4d09d8af19e2f9fa2614"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Suspend Agent",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGVkMTJmZTcxNzM1M2Q5NDUzNmYxYzkiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc2MTMxNDUwNywiZXhwIjoxNzYzMDQyNTA3fQ.YK2-mnwRolsxu-hzqHg_ebWGrSUbsjeOWSQlV4_BnC4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://assignment-5-nine-mu.vercel.app/api/user/suspendAgent/68ef4d09d8af19e2f9fa2614",
+							"protocol": "https",
+							"host": [
+								"assignment-5-nine-mu",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"user",
+								"suspendAgent",
+								"68ef4d09d8af19e2f9fa2614"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wallet",
+			"item": [
+				{
+					"name": "Get my wallet",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGVkMTJmZTcxNzM1M2Q5NDUzNmYxYzkiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzYwNjE4MDUyLCJleHAiOjE3NjIzNDYwNTJ9.3x0D3Vzt5u1dEKIGx59NN05VOwpT-JqJhrMR0H1DZMY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n   \r\n    \"email\":\"super@gmail.com\",\r\n    \"password\":\"1234Super@\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "https://assignment-5-nine-mu.vercel.app/api/wallet",
+							"protocol": "https",
+							"host": [
+								"assignment-5-nine-mu",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"wallet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Wallets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGVkMTJmZTcxNzM1M2Q5NDUzNmYxYzkiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc2MTIzMjcyMiwiZXhwIjoxNzYyOTYwNzIyfQ.ZycluSo1-T_5wqoWva5KRvfY4p_dslNZCt_8yEzc3Y8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://assignment-5-nine-mu.vercel.app/api/wallet/all-wallets",
+							"protocol": "https",
+							"host": [
+								"assignment-5-nine-mu",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"wallet",
+								"all-wallets"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deposit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGVkMTJmZTcxNzM1M2Q5NDUzNmYxYzkiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc2MTIzMjcyMiwiZXhwIjoxNzYyOTYwNzIyfQ.ZycluSo1-T_5wqoWva5KRvfY4p_dslNZCt_8yEzc3Y8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://assignment-5-nine-mu.vercel.app/api/wallet/deposit",
+							"protocol": "https",
+							"host": [
+								"assignment-5-nine-mu",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"wallet",
+								"deposit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "withdraw",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGVkMTJmZTcxNzM1M2Q5NDUzNmYxYzkiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc2MTIzMjcyMiwiZXhwIjoxNzYyOTYwNzIyfQ.ZycluSo1-T_5wqoWva5KRvfY4p_dslNZCt_8yEzc3Y8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://assignment-5-nine-mu.vercel.app/api/wallet/withdraw",
+							"protocol": "https",
+							"host": [
+								"assignment-5-nine-mu",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"wallet",
+								"withdraw"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGVkMTJmZTcxNzM1M2Q5NDUzNmYxYzkiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc2MTMwMDY3NCwiZXhwIjoxNzYzMDI4Njc0fQ.x3h5O6bCqfwB7fvZVAYYsP146oD0S76QY345MYNZUrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"receiver_Email\":\"super3@gmail.com\",\r\n    \"amount\":95\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://assignment-5-nine-mu.vercel.app/api/wallet/transfer",
+							"protocol": "https",
+							"host": [
+								"assignment-5-nine-mu",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"wallet",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agent Cash In",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGVkMTJmZTcxNzM1M2Q5NDUzNmYxYzkiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc2MTMxNDUwNywiZXhwIjoxNzYzMDQyNTA3fQ.YK2-mnwRolsxu-hzqHg_ebWGrSUbsjeOWSQlV4_BnC4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userEmail\": \"super3@gmail.com\",\r\n    \"amount\":85\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://assignment-5-nine-mu.vercel.app/api/wallet/agent/cashIn",
+							"protocol": "https",
+							"host": [
+								"assignment-5-nine-mu",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"wallet",
+								"agent",
+								"cashIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agent Cash Out",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGVkMTJmZTcxNzM1M2Q5NDUzNmYxYzkiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc2MTMxNDUwNywiZXhwIjoxNzYzMDQyNTA3fQ.YK2-mnwRolsxu-hzqHg_ebWGrSUbsjeOWSQlV4_BnC4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userEmail\": \"super3@gmail.com\",\r\n    \"amount\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://assignment-5-nine-mu.vercel.app/api/wallet/agent/cashOut",
+							"protocol": "https",
+							"host": [
+								"assignment-5-nine-mu",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"wallet",
+								"agent",
+								"cashOut"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "All Transaction Histories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGVkMTJmZTcxNzM1M2Q5NDUzNmYxYzkiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc2MTMxNDUwNywiZXhwIjoxNzYzMDQyNTA3fQ.YK2-mnwRolsxu-hzqHg_ebWGrSUbsjeOWSQlV4_BnC4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://assignment-5-nine-mu.vercel.app/api/transaction/all-transactions",
+							"protocol": "https",
+							"host": [
+								"assignment-5-nine-mu",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"transaction",
+								"all-transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Commission-histories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGVkMTJmZTcxNzM1M2Q5NDUzNmYxYzkiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc2MTMxNDUwNywiZXhwIjoxNzYzMDQyNTA3fQ.YK2-mnwRolsxu-hzqHg_ebWGrSUbsjeOWSQlV4_BnC4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://assignment-5-nine-mu.vercel.app/api/transaction/commission-histories",
+							"protocol": "https",
+							"host": [
+								"assignment-5-nine-mu",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"transaction",
+								"commission-histories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "My Transaction",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGVkMTJmZTcxNzM1M2Q5NDUzNmYxYzkiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc2MTQ1MjczOSwiZXhwIjoxNzYzMTgwNzM5fQ.vQ7kAatpkeG9AEFLjwP5DyLPILbu7ddulrrrlRx4SfA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://assignment-5-nine-mu.vercel.app/api/transaction/my-transactions",
+							"protocol": "https",
+							"host": [
+								"assignment-5-nine-mu",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"transaction",
+								"my-transactions"
+							],
+							"query": [
+								{
+									"key": "Auth",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Admin Configuration",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGVkMTJmZTcxNzM1M2Q5NDUzNmYxYzkiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc2MTU0NTU5NCwiZXhwIjoxNzYzMjczNTk0fQ.-Q7sV___PzdK3Q5E-E7v_iQVsOBtZ61TPWMy1qCklys",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"commission\":2,\r\n   \"minBalance\":20 \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://assignment-5-nine-mu.vercel.app/api/admin/admin-configs",
+							"protocol": "https",
+							"host": [
+								"assignment-5-nine-mu",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"admin",
+								"admin-configs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
