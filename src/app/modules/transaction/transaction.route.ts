@@ -7,7 +7,7 @@ const router = Router();
 
 
 router.get("/my-transactions",checkAuth(...Object.values(Role)),transactionController.getMyTransactionHistory)
-router.get("/commission-histories", checkAuth(Role.AGENT, Role.ADMIN), transactionController.getCommissionHistory)
+router.get("/commission-histories", checkAuth( Role.ADMIN), transactionController.getCommissionHistory)
 
 router.get("/all-transactions",checkAuth(Role.ADMIN),transactionController.getAllTransaction)
 
